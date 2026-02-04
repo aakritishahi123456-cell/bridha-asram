@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Buddhabhoomi Human Service Ashram</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <style>
+        .nepali-text { font-family: 'Noto Sans Devanagari', sans-serif; }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="font-sans antialiased bg-gray-50">
+    <!-- Navigation -->
+    <nav x-data="{ open: false }" class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <!-- Logo and Brand -->
+                <div class="flex items-center">
+                    <a href="home.html" class="flex items-center">
+                        <div class="w-10 h-10 bg-gradient-to-r from-green-600 to-green-800 rounded-full flex items-center justify-center mr-3">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                            </svg>
+                        </div>
+                        <div class="hidden sm:block">
+                            <div class="text-lg font-bold text-gray-900 nepali-text">बुद्धभुमी मानव सेवा आश्रम</div>
+                            <div class="text-xs text-gray-600">Buddhabhoomi Human Service Ashram</div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="home.html" class="text-gray-700 hover:text-green-600 px-3 py-2 text-sm font-medium transition duration-300">Home</a>
+                    <a href="about.html" class="text-gray-700 hover:text-green-600 px-3 py-2 text-sm font-medium transition duration-300">About Us</a>
+                    <a href="services.html" class="text-gray-700 hover:text-green-600 px-3 py-2 text-sm font-medium transition duration-300">Services</a>
+                    <a href="projects.html" class="text-green-600 border-b-2 border-green-600 px-3 py-2 text-sm font-medium">Projects</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-green-600 px-3 py-2 text-sm font-medium transition duration-300">Contact</a>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="volunteer.html" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition duration-300">Volunteer</a>
+                    <a href="donate.html" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition duration-300">Donate</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button @click="open = !open" class="text-gray-700 hover:text-green-600 focus:outline-none focus:text-green-600">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path x-show="!open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                            <path x-show="open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div x-show="open" x-transition class="md:hidden bg-white border-t border-gray-200">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="home.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-md">Home</a>
+                <a href="about.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-md">About Us</a>
+                <a href="services.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-md">Services</a>
+                <a href="projects.html" class="block px-3 py-2 text-base font-medium text-green-600 bg-green-50 rounded-md">Projects</a>
+                <a href="contact.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-md">Contact</a>
+                
+                <!-- Mobile CTA Buttons -->
+                <div class="pt-4 border-t border-gray-200">
+                    <a href="volunteer.html" class="block w-full text-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium mb-2">Volunteer</a>
+                    <a href="donate.html" class="block w-full text-center bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-sm font-medium">Donate</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="bg-gradient-to-r from-green-600 to-green-800 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Our Projects</h1>
+            <p class="text-xl max-w-2xl mx-auto">
+                Discover our ongoing initiatives and completed projects that are making a real difference in the lives of vulnerable communities.
+            </p>
+        </div>
+    </section>
+
+    <!-- Impact Statistics -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Impact</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Through our various projects, we've been able to make a significant impact in the lives of those we serve.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg p-6 text-center">
+                    <div class="inline-flex items-center justify-center w-12 h-12 bg-blue-600 rounded-full mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z"></path>
+                        </svg>
+                    </div>
+                    <div class="text-3xl font-bold text-gray-900 mb-2">195</div>
+                    <p class="text-gray-600 font-medium">People Sheltered</p>
+                </div>
+
+                <div class="bg-gradient-to-r from-green-50 to-green-100 rounded-lg p-6 text-center">
+                    <div class="inline-flex items-center justify-center w-12 h-12 bg-green-600 rounded-full mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                    </div>
+                    <div class="text-3xl font-bold text-gray-900 mb-2">117</div>
+                    <p class="text-gray-600 font-medium">Elderly Cared For</p>
+                </div>
+
+                <div class="bg-gradient-to-r from-yellow-50 to-yellow-100 rounded-lg p-6 text-center">
+                    <div class="inline-flex items-center justify-center w-12 h-12 bg-yellow-600 rounded-full mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                        </svg>
+                    </div>
+                    <div class="text-3xl font-bold text-gray-900 mb-2">16,700</div>
+                    <p class="text-gray-600 font-medium">Meals Served</p>
+                </div>
+
+                <div class="bg-gradient-to-r from-purple-50 to-purple-100 rounded-lg p-6 text-center">
+                    <div class="inline-flex items-center justify-center w-12 h-12 bg-purple-600 rounded-full mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <div class="text-3xl font-bold text-gray-900 mb-2">42</div>
+                    <p class="text-gray-600 font-medium">Active Volunteers</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Current Projects -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Current Projects</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Our ongoing initiatives focused on expanding our reach and improving the quality of care we provide.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Shelter Expansion Project -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center">
+                        <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-gray-900">Shelter Expansion Project</h3>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">In Progress</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Expanding our main shelter facility in Surkhet to accommodate 50 additional residents with improved amenities and accessibility features.
+                        </p>
+                        <div class="mb-4">
+                            <div class="flex justify-between text-sm text-gray-600 mb-1">
+                                <span>Progress</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-600 h-2 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="text-sm text-gray-600">
+                            <p><strong>Timeline:</strong> January 2024 - June 2024</p>
+                            <p><strong>Budget:</strong> NPR 2,500,000</p>
+                            <p><strong>Beneficiaries:</strong> 50 additional residents</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Healthcare Unit -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-r from-green-500 to-green-600 flex items-center justify-center">
+                        <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-gray-900">Mobile Healthcare Unit</h3>
+                            <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">Active</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Deploying mobile healthcare units to reach remote communities in Jajarkot district, providing medical care and health screenings.
+                        </p>
+                        <div class="mb-4">
+                            <div class="flex justify-between text-sm text-gray-600 mb-1">
+                                <span>Coverage</span>
+                                <span>60%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-green-600 h-2 rounded-full" style="width: 60%"></div>
+                            </div>
+                        </div>
+                        <div class="text-sm text-gray-600">
+                            <p><strong>Timeline:</strong> March 2024 - Ongoing</p>
+                            <p><strong>Budget:</strong> NPR 1,800,000</p>
+                            <p><strong>Beneficiaries:</strong> 500+ rural residents</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills Training Program -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-r from-purple-500 to-purple-600 flex items-center justify-center">
+                        <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-gray-900">Skills Training Program</h3>
+                            <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded">Planning</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Launching vocational training programs to help homeless individuals develop marketable skills and achieve self-sufficiency.
+                        </p>
+                        <div class="mb-4">
+                            <div class="flex justify-between text-sm text-gray-600 mb-1">
+                                <span>Development</span>
+                                <span>25%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-purple-600 h-2 rounded-full" style="width: 25%"></div>
+                            </div>
+                        </div>
+                        <div class="text-sm text-gray-600">
+                            <p><strong>Timeline:</strong> May 2024 - December 2024</p>
+                            <p><strong>Budget:</strong> NPR 1,200,000</p>
+                            <p><strong>Beneficiaries:</strong> 100 trainees</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Community Kitchen Project -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-r from-yellow-500 to-yellow-600 flex items-center justify-center">
+                        <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-gray-900">Community Kitchen Project</h3>
+                            <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded">Active</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Establishing community kitchens to provide nutritious meals to vulnerable populations and create employment opportunities.
+                        </p>
+                        <div class="mb-4">
+                            <div class="flex justify-between text-sm text-gray-600 mb-1">
+                                <span>Implementation</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-yellow-600 h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="text-sm text-gray-600">
+                            <p><strong>Timeline:</strong> February 2024 - April 2024</p>
+                            <p><strong>Budget:</strong> NPR 800,000</p>
+                            <p><strong>Beneficiaries:</strong> 200 daily meals</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Completed Projects -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Completed Projects</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Successfully completed initiatives that have made a lasting impact on our community.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Emergency Shelter Setup -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-green-200">
+                    <div class="h-32 bg-gradient-to-r from-green-400 to-green-500 flex items-center justify-center">
+                        <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Emergency Shelter Setup</h3>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Established our first emergency shelter facility in Surkhet, providing immediate accommodation for 45 individuals.
+                        </p>
+                        <div class="text-xs text-gray-500">
+                            <p><strong>Completed:</strong> December 2023</p>
+                            <p><strong>Impact:</strong> 45 people housed</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Healthcare Partnership -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-green-200">
+                    <div class="h-32 bg-gradient-to-r from-blue-400 to-blue-500 flex items-center justify-center">
+                        <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Healthcare Partnership</h3>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Partnered with local hospitals to provide regular health checkups and medical care for our residents.
+                        </p>
+                        <div class="text-xs text-gray-500">
+                            <p><strong>Completed:</strong> January 2024</p>
+                            <p><strong>Impact:</strong> 150+ health checkups</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Volunteer Training Program -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-green-200">
+                    <div class="h-32 bg-gradient-to-r from-purple-400 to-purple-500 flex items-center justify-center">
+                        <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Volunteer Training Program</h3>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Trained 42 volunteers in elderly care, first aid, and community outreach to strengthen our support network.
+                        </p>
+                        <div class="text-xs text-gray-500">
+                            <p><strong>Completed:</strong> February 2024</p>
+                            <p><strong>Impact:</strong> 42 trained volunteers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Projects -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Upcoming Projects</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Future initiatives we're planning to expand our impact and reach more communities in need.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Digital Literacy Program -->
+                <div class="bg-white rounded-lg shadow-lg p-6 border-l-4 border-blue-500">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">Digital Literacy Program</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Teaching basic computer skills and digital literacy to help residents access online services and opportunities.
+                    </p>
+                    <div class="text-sm text-gray-600">
+                        <p><strong>Planned Start:</strong> July 2024</p>
+                        <p><strong>Duration:</strong> 6 months</p>
+                        <p><strong>Target:</strong> 30 participants</p>
+                    </div>
+                </div>
+
+                <!-- Women's Empowerment Initiative -->
+                <div class="bg-white rounded-lg shadow-lg p-6 border-l-4 border-pink-500">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-pink-100 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">Women's Empowerment Initiative</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Special programs focused on supporting homeless women with childcare, skills training, and safe accommodation.
+                    </p>
+                    <div class="text-sm text-gray-600">
+                        <p><strong>Planned Start:</strong> August 2024</p>
+                        <p><strong>Duration:</strong> 12 months</p>
+                        <p><strong>Target:</strong> 25 women and children</p>
+                    </div>
+                </div>
+
+                <!-- Mental Health Support Center -->
+                <div class="bg-white rounded-lg shadow-lg p-6 border-l-4 border-green-500">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">Mental Health Support Center</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Establishing a dedicated mental health facility with professional counselors and therapy programs.
+                    </p>
+                    <div class="text-sm text-gray-600">
+                        <p><strong>Planned Start:</strong> September 2024</p>
+                        <p><strong>Duration:</strong> Ongoing</p>
+                        <p><strong>Target:</strong> All residents and community</p>
+                    </div>
+                </div>
+
+                <!-- Youth Mentorship Program -->
+                <div class="bg-white rounded-lg shadow-lg p-6 border-l-4 border-yellow-500">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-yellow-100 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">Youth Mentorship Program</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Connecting young homeless individuals with mentors to guide them towards education and career opportunities.
+                    </p>
+                    <div class="text-sm text-gray-600">
+                        <p><strong>Planned Start:</strong> October 2024</p>
+                        <p><strong>Duration:</strong> 18 months</p>
+                        <p><strong>Target:</strong> 20 youth participants</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Our Projects -->
+    <section class="py-16 bg-gradient-to-r from-green-600 to-green-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-4">Support Our Projects</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">
+                Your support helps us continue our vital work and launch new initiatives to serve more people in need.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="donate.html" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-semibold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">
+                    Fund a Project
+                </a>
+                <a href="volunteer.html" class="bg-transparent border-2 border-white hover:bg-white hover:text-green-800 font-semibold py-3 px-8 rounded-lg transition duration-300">
+                    Volunteer With Us
+                </a>
+                <a href="contact.html" class="bg-transparent border-2 border-white hover:bg-white hover:text-green-800 font-semibold py-3 px-8 rounded-lg transition duration-300">
+                    Partner With Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Organization Info -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-green-600 to-green-800 rounded-full flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="text-xl font-bold">Buddhabhoomi Human Service Ashram</div>
+                            <div class="text-sm text-gray-300 nepali-text">बुद्धभुमी मानव सेवा आश्रम</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4 max-w-md">
+                        Dedicated to providing compassionate care and support to homeless individuals and elderly citizens across Nepal.
+                    </p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="home.html" class="text-gray-300 hover:text-white transition-colors duration-200">Home</a></li>
+                        <li><a href="about.html" class="text-gray-300 hover:text-white transition-colors duration-200">About Us</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-white transition-colors duration-200">Services</a></li>
+                        <li><a href="projects.html" class="text-gray-300 hover:text-white transition-colors duration-200">Projects</a></li>
+                        <li><a href="volunteer.html" class="text-gray-300 hover:text-white transition-colors duration-200">Volunteer</a></li>
+                        <li><a href="donate.html" class="text-gray-300 hover:text-white transition-colors duration-200">Donate</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact Info</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-start space-x-3">
+                            <svg class="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            <p class="text-gray-300">Birendranagar, Surkhet, Nepal</p>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <svg class="h-5 w-5 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                            </svg>
+                            <a href="tel:+977-83-520123" class="text-gray-300 hover:text-white transition-colors duration-200">+977-83-520123</a>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <svg class="h-5 w-5 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            <a href="mailto:info@buddhabhoomi.org.np" class="text-gray-300 hover:text-white transition-colors duration-200">info@buddhabhoomi.org.np</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom Section -->
+            <div class="border-t border-gray-800 mt-8 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="text-gray-400 text-sm mb-4 md:mb-0">
+                        <p>&copy; 2024 Buddhabhoomi Human Service Ashram. All rights reserved.</p>
+                    </div>
+                    <div class="flex space-x-6 text-sm">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
