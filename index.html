@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>बुद्धभुमी मानव सेवा आश्रम - Buddhabhoomi Human Service Ashram</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <style>
+        .nepali-text { font-family: 'Noto Sans Devanagari', sans-serif; }
+        .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="font-sans antialiased bg-gray-50">
+    <!-- Navigation -->
+    <nav x-data="{ open: false }" class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <!-- Logo and Brand -->
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center">
+                        <div class="w-10 h-10 bg-gradient-to-r from-green-600 to-green-800 rounded-full flex items-center justify-center mr-3">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                            </svg>
+                        </div>
+                        <div class="hidden sm:block">
+                            <div class="text-lg font-bold text-gray-900 nepali-text">बुद्धभुमी मानव सेवा आश्रम</div>
+                            <div class="text-xs text-gray-600">Buddhabhoomi Human Service Ashram</div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-green-600 border-b-2 border-green-600 px-3 py-2 text-sm font-medium">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-green-600 px-3 py-2 text-sm font-medium transition duration-300">About Us</a>
+                    <a href="#work" class="text-gray-700 hover:text-green-600 px-3 py-2 text-sm font-medium transition duration-300">Our Work</a>
+                    <a href="#cities" class="text-gray-700 hover:text-green-600 px-3 py-2 text-sm font-medium transition duration-300">Cities</a>
+                    <a href="#events" class="text-gray-700 hover:text-green-600 px-3 py-2 text-sm font-medium transition duration-300">Events</a>
+                    <a href="#blog" class="text-gray-700 hover:text-green-600 px-3 py-2 text-sm font-medium transition duration-300">Blog</a>
+                    <a href="#contact" class="text-gray-700 hover:text-green-600 px-3 py-2 text-sm font-medium transition duration-300">Contact</a>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="#volunteer" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition duration-300">Volunteer</a>
+                    <a href="#donate" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition duration-300">Donate</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button @click="open = !open" class="text-gray-700 hover:text-green-600 focus:outline-none focus:text-green-600">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path x-show="!open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                            <path x-show="open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div x-show="open" x-transition class="md:hidden bg-white border-t border-gray-200">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#" class="block px-3 py-2 text-base font-medium text-green-600 bg-green-50 rounded-md">Home</a>
+                <a href="#" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-md">About Us</a>
+                <a href="#" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-md">Our Work</a>
+                <a href="#" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-md">Cities</a>
+                <a href="#" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-md">Events</a>
+                <a href="#" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-md">Blog</a>
+                <a href="#" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-md">Contact</a>
+                
+                <!-- Mobile CTA Buttons -->
+                <div class="pt-4 border-t border-gray-200">
+                    <a href="#" class="block w-full text-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium mb-2">Volunteer</a>
+                    <a href="#" class="block w-full text-center bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-sm font-medium">Donate</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-r from-green-600 to-green-800 text-white overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-20"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                    <span class="block text-yellow-300 nepali-text">बुद्धभुमी मानव सेवा आश्रम</span>
+                    <span class="block text-2xl md:text-3xl mt-2 font-medium">Buddhabhoomi Human Service Ashram</span>
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed">
+                    Providing dignity, shelter, care, and compassion to homeless and elderly individuals, 
+                    ensuring a humane and respectful life for the most vulnerable members of society.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#donate" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-semibold py-4 px-8 rounded-lg transition duration-300 transform hover:scale-105">
+                        Donate Now
+                    </a>
+                    <a href="#volunteer" class="bg-transparent border-2 border-white hover:bg-white hover:text-green-800 font-semibold py-4 px-8 rounded-lg transition duration-300">
+                        Become a Volunteer
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Decorative Elements -->
+        <div class="absolute top-0 right-0 -mt-20 -mr-20 w-40 h-40 bg-yellow-300 rounded-full opacity-20"></div>
+        <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-60 h-60 bg-green-300 rounded-full opacity-20"></div>
+    </section>
+
+    <!-- Impact Counters -->
+    <div class="bg-gradient-to-r from-green-600 to-green-800 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-white mb-4">Our Impact</h2>
+                <p class="text-green-100 text-lg max-w-2xl mx-auto">
+                    Together, we're making a real difference in the lives of those who need it most. 
+                    Here's what we've accomplished with your support.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- People Sheltered -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center hover:bg-white/20 transition-all duration-300">
+                    <div class="inline-flex items-center justify-center w-12 h-12 bg-white/20 rounded-full mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z"></path>
+                        </svg>
+                    </div>
+                    <div class="text-3xl font-bold text-white mb-2">195</div>
+                    <p class="text-green-100 font-medium">People Sheltered</p>
+                </div>
+
+                <!-- Elderly Cared -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center hover:bg-white/20 transition-all duration-300">
+                    <div class="inline-flex items-center justify-center w-12 h-12 bg-white/20 rounded-full mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                    </div>
+                    <div class="text-3xl font-bold text-white mb-2">117</div>
+                    <p class="text-green-100 font-medium">Elderly Cared For</p>
+                </div>
+
+                <!-- Meals Served -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center hover:bg-white/20 transition-all duration-300">
+                    <div class="inline-flex items-center justify-center w-12 h-12 bg-white/20 rounded-full mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                        </svg>
+                    </div>
+                    <div class="text-3xl font-bold text-white mb-2">16,700</div>
+                    <p class="text-green-100 font-medium">Meals Served</p>
+                </div>
+
+                <!-- Active Volunteers -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center hover:bg-white/20 transition-all duration-300">
+                    <div class="inline-flex items-center justify-center w-12 h-12 bg-white/20 rounded-full mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <div class="text-3xl font-bold text-white mb-2">42</div>
+                    <p class="text-green-100 font-medium">Active Volunteers</p>
+                </div>
+
+                <!-- Total Donations -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center hover:bg-white/20 transition-all duration-300">
+                    <div class="inline-flex items-center justify-center w-12 h-12 bg-white/20 rounded-full mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <div class="text-3xl font-bold text-white mb-2">NPR 17,500</div>
+                    <p class="text-green-100 font-medium">Donations Received</p>
+                </div>
+
+                <!-- Cities Served -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center hover:bg-white/20 transition-all duration-300">
+                    <div class="inline-flex items-center justify-center w-12 h-12 bg-white/20 rounded-full mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                    </div>
+                    <div class="text-3xl font-bold text-white mb-2">2</div>
+                    <p class="text-green-100 font-medium">Cities Served</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mission & Vision Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Mission & Vision</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Guided by compassion and driven by purpose, we work towards a Nepal where no one is left behind.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Mission -->
+                <div class="bg-green-50 rounded-lg p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-green-600 rounded-full p-3 mr-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900">Our Mission</h3>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">
+                        To provide dignity, shelter, care, and compassion to homeless and elderly individuals, 
+                        ensuring a humane and respectful life for the most vulnerable members of society.
+                    </p>
+                </div>
+                
+                <!-- Vision -->
+                <div class="bg-yellow-50 rounded-lg p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-yellow-600 rounded-full p-3 mr-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900">Our Vision</h3>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">
+                        To build a compassionate Nepal where no elderly or homeless person is left abandoned, 
+                        neglected, or without care.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Work Section -->
+    <section id="work" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Work</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    We focus on two core areas of humanitarian service, providing comprehensive care and support.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Homeless Care -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                    <div class="h-48 bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center">
+                        <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3a2 2 0 012-2h4a2 2 0 012 2v4m-6 4l2 2 4-4"></path>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Homeless Care Program</h3>
+                        <p class="text-gray-600 mb-4">
+                            Providing shelter, meals, healthcare, and rehabilitation services to homeless individuals. 
+                            We offer a safe haven and pathway to self-sufficiency.
+                        </p>
+                        <ul class="text-sm text-gray-600 space-y-1 mb-4">
+                            <li>• Emergency shelter and accommodation</li>
+                            <li>• Daily meals and nutrition support</li>
+                            <li>• Healthcare and medical assistance</li>
+                            <li>• Job training and placement support</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Elderly Care -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                    <div class="h-48 bg-gradient-to-r from-purple-500 to-purple-600 flex items-center justify-center">
+                        <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Elderly Care Program</h3>
+                        <p class="text-gray-600 mb-4">
+                            Comprehensive care for elderly individuals who need support, companionship, and medical attention. 
+                            Ensuring dignity in their golden years.
+                        </p>
+                        <ul class="text-sm text-gray-600 space-y-1 mb-4">
+                            <li>• 24/7 care and supervision</li>
+                            <li>• Medical care and health monitoring</li>
+                            <li>• Social activities and companionship</li>
+                            <li>• Spiritual and emotional support</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cities Section -->
+    <section id="cities" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Cities</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    We serve communities across Nepal, with primary operations in Surkhet and expanding to Jajarkot.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Surkhet -->
+                <div class="bg-gradient-to-r from-green-50 to-green-100 rounded-lg p-8">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Surkhet (Primary)</h3>
+                    <p class="text-gray-700 mb-4">
+                        Our main operations center, serving the homeless and elderly population in Birendranagar and surrounding areas.
+                    </p>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li>• Main shelter facility</li>
+                        <li>• 24/7 care services</li>
+                        <li>• Community outreach programs</li>
+                        <li>• Volunteer coordination center</li>
+                    </ul>
+                </div>
+                
+                <!-- Jajarkot -->
+                <div class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg p-8">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Jajarkot (Secondary)</h3>
+                    <p class="text-gray-700 mb-4">
+                        Expanding our services to reach more vulnerable populations in rural areas of Jajarkot district.
+                    </p>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li>• Mobile care units</li>
+                        <li>• Community partnerships</li>
+                        <li>• Emergency response services</li>
+                        <li>• Local volunteer network</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Upcoming Events</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Join us in our mission through various community events and volunteer activities.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Sample Events -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-r from-green-400 to-green-600 flex items-center justify-center">
+                        <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3a2 2 0 012-2h4a2 2 0 012 2v4m-6 4l2 2 4-4"></path>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Community Outreach Drive</h3>
+                        <p class="text-sm text-gray-500 mb-2">March 15, 2026</p>
+                        <p class="text-gray-600 text-sm">Join us for a community outreach program in Surkhet to identify and help vulnerable individuals.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-r from-blue-400 to-blue-600 flex items-center justify-center">
+                        <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Volunteer Training Workshop</h3>
+                        <p class="text-sm text-gray-500 mb-2">March 22, 2026</p>
+                        <p class="text-gray-600 text-sm">Training session for new volunteers on elderly care and community service best practices.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-r from-purple-400 to-purple-600 flex items-center justify-center">
+                        <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Fundraising Dinner</h3>
+                        <p class="text-sm text-gray-500 mb-2">April 5, 2026</p>
+                        <p class="text-gray-600 text-sm">Annual fundraising dinner to support our programs and expand our services to more communities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Latest Updates</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Stay informed about our recent activities and impact stories from the community.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Sample Blog Posts -->
+                <article class="bg-gray-50 rounded-lg overflow-hidden hover:shadow-lg transition duration-300">
+                    <div class="h-48 bg-gradient-to-r from-green-400 to-green-600 flex items-center justify-center">
+                        <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9.5a2.5 2.5 0 00-2.5-2.5H15"></path>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-sm text-gray-500 mb-2">February 1, 2026</div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">New Shelter Facility Opens in Surkhet</h3>
+                        <p class="text-gray-600 text-sm">We're excited to announce the opening of our expanded shelter facility, providing accommodation for 50 additional individuals.</p>
+                    </div>
+                </article>
+                
+                <article class="bg-gray-50 rounded-lg overflow-hidden hover:shadow-lg transition duration-300">
+                    <div class="h-48 bg-gradient-to-r from-blue-400 to-blue-600 flex items-center justify-center">
+                        <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-sm text-gray-500 mb-2">January 28, 2026</div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Success Story: Ram's Journey to Independence</h3>
+                        <p class="text-gray-600 text-sm">Read about how our programs helped Ram, a former homeless individual, find stable housing and employment.</p>
+                    </div>
+                </article>
+                
+                <article class="bg-gray-50 rounded-lg overflow-hidden hover:shadow-lg transition duration-300">
+                    <div class="h-48 bg-gradient-to-r from-purple-400 to-purple-600 flex items-center justify-center">
+                        <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-sm text-gray-500 mb-2">January 25, 2026</div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Volunteer Appreciation Event</h3>
+                        <p class="text-gray-600 text-sm">Celebrating our amazing volunteers who dedicate their time and energy to serving the community.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Get in Touch</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Have questions or want to get involved? We'd love to hear from you.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Information -->
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-6">Contact Information</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <svg class="h-6 w-6 text-green-600 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            <div>
+                                <p class="font-medium text-gray-900">Address</p>
+                                <p class="text-gray-600">Birendranagar, Surkhet, Nepal</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-3">
+                            <svg class="h-6 w-6 text-green-600 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                            </svg>
+                            <div>
+                                <p class="font-medium text-gray-900">Phone</p>
+                                <p class="text-gray-600">+977-83-520123</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-3">
+                            <svg class="h-6 w-6 text-green-600 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            <div>
+                                <p class="font-medium text-gray-900">Email</p>
+                                <p class="text-gray-600">info@buddhabhoomi.org.np</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-6">Send us a Message</h3>
+                    <form class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                            <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                            <input type="email" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                            <textarea rows="4" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-md transition duration-300">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Volunteer Section -->
+    <section id="volunteer" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Become a Volunteer</h2>
+            <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+                Join our mission to serve the most vulnerable members of our society. Your time and skills can make a real difference.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div class="text-center">
+                    <div class="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Care Services</h3>
+                    <p class="text-gray-600">Help with daily care, companionship, and support for elderly residents.</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Administrative Support</h3>
+                    <p class="text-gray-600">Assist with documentation, coordination, and organizational tasks.</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-purple-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Community Outreach</h3>
+                    <p class="text-gray-600">Help identify and connect with vulnerable individuals in the community.</p>
+                </div>
+            </div>
+            
+            <!-- Volunteer Registration Form -->
+            <div id="volunteerForm" class="max-w-4xl mx-auto bg-gray-50 rounded-lg p-8 mb-8">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">Volunteer Registration Form</h3>
+                <form class="space-y-6">
+                    <!-- Personal Information -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
+                            <input type="text" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Your full name">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Email *</label>
+                            <input type="email" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="your@email.com">
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
+                            <input type="tel" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="+977-XXX-XXXXXXX">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Age</label>
+                            <input type="number" min="16" max="80" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="25">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Address</label>
+                        <textarea rows="2" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Your complete address"></textarea>
+                    </div>
+                    
+                    <!-- Skills and Interests -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Areas of Interest *</label>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                            <label class="flex items-center">
+                                <input type="checkbox" class="mr-2" value="elderly-care">
+                                <span class="text-sm">Elderly Care</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="mr-2" value="homeless-support">
+                                <span class="text-sm">Homeless Support</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="mr-2" value="healthcare">
+                                <span class="text-sm">Healthcare</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="mr-2" value="administration">
+                                <span class="text-sm">Administration</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="mr-2" value="fundraising">
+                                <span class="text-sm">Fundraising</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="mr-2" value="outreach">
+                                <span class="text-sm">Community Outreach</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Availability</label>
+                            <select class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option value="">Select availability</option>
+                                <option value="weekdays">Weekdays</option>
+                                <option value="weekends">Weekends</option>
+                                <option value="both">Both weekdays and weekends</option>
+                                <option value="flexible">Flexible</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Preferred Location</label>
+                            <select class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option value="">Select location</option>
+                                <option value="surkhet">Surkhet</option>
+                                <option value="jajarkot">Jajarkot</option>
+                                <option value="both">Both locations</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Skills and Experience</label>
+                        <textarea rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Tell us about your relevant skills, experience, or qualifications..."></textarea>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Why do you want to volunteer with us?</label>
+                        <textarea rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Share your motivation for volunteering..."></textarea>
+                    </div>
+                    
+                    <div class="flex items-center">
+                        <input type="checkbox" required class="mr-2">
+                        <span class="text-sm text-gray-700">I agree to the volunteer terms and conditions and commit to serving with dedication and compassion.</span>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button type="submit" onclick="submitVolunteerForm()" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">
+                            Submit Application
+                        </button>
+                    </div>
+                </form>
+            </div>
+            
+            <button onclick="toggleVolunteerForm()" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">
+                Register as Volunteer
+            </button>
+        </div>
+    </section>
+
+    <!-- Donation Section -->
+    <section id="donate" class="py-16 bg-gradient-to-r from-green-600 to-green-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-4">Support Our Mission</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">
+                Your donation directly supports our programs and helps us provide better care and services to those in need.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
+                    <div class="text-2xl font-bold mb-2">NPR 500</div>
+                    <p class="text-sm">Provides meals for one person for a week</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
+                    <div class="text-2xl font-bold mb-2">NPR 2,000</div>
+                    <p class="text-sm">Covers basic healthcare for one month</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
+                    <div class="text-2xl font-bold mb-2">NPR 5,000</div>
+                    <p class="text-sm">Provides shelter for one person for a month</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
+                    <div class="text-2xl font-bold mb-2">NPR 10,000</div>
+                    <p class="text-sm">Supports comprehensive care for one person</p>
+                </div>
+            </div>
+            
+            <!-- Donation Form -->
+            <div class="max-w-2xl mx-auto bg-white/10 backdrop-blur-sm rounded-lg p-8 mb-8">
+                <h3 class="text-2xl font-bold mb-6">Make a Donation</h3>
+                <form id="donationForm" class="space-y-4">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                        <button type="button" onclick="selectAmount(500)" class="amount-btn bg-white/20 hover:bg-white/30 text-white font-semibold py-3 px-4 rounded-lg transition duration-300">
+                            NPR 500
+                        </button>
+                        <button type="button" onclick="selectAmount(2000)" class="amount-btn bg-white/20 hover:bg-white/30 text-white font-semibold py-3 px-4 rounded-lg transition duration-300">
+                            NPR 2,000
+                        </button>
+                        <button type="button" onclick="selectAmount(5000)" class="amount-btn bg-white/20 hover:bg-white/30 text-white font-semibold py-3 px-4 rounded-lg transition duration-300">
+                            NPR 5,000
+                        </button>
+                        <button type="button" onclick="selectAmount(10000)" class="amount-btn bg-white/20 hover:bg-white/30 text-white font-semibold py-3 px-4 rounded-lg transition duration-300">
+                            NPR 10,000
+                        </button>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Custom Amount (NPR)</label>
+                            <input type="number" id="customAmount" placeholder="Enter amount" class="w-full px-3 py-2 bg-white/20 border border-white/30 rounded-md text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Donation Purpose</label>
+                            <select class="w-full px-3 py-2 bg-white/20 border border-white/30 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-white/50">
+                                <option value="general">General Support</option>
+                                <option value="homeless">Homeless Care</option>
+                                <option value="elderly">Elderly Care</option>
+                                <option value="emergency">Emergency Fund</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Full Name</label>
+                            <input type="text" required class="w-full px-3 py-2 bg-white/20 border border-white/30 rounded-md text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50" placeholder="Your full name">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Email</label>
+                            <input type="email" required class="w-full px-3 py-2 bg-white/20 border border-white/30 rounded-md text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50" placeholder="your@email.com">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Phone (Optional)</label>
+                        <input type="tel" class="w-full px-3 py-2 bg-white/20 border border-white/30 rounded-md text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50" placeholder="+977-XXX-XXXXXXX">
+                    </div>
+                </form>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="donateWithEsewa()" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-semibold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">
+                    Donate with eSewa
+                </button>
+                <button onclick="donateWithKhalti()" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">
+                    Donate with Khalti
+                </button>
+                <button onclick="showBankDetails()" class="bg-transparent border-2 border-white hover:bg-white hover:text-green-800 font-semibold py-3 px-8 rounded-lg transition duration-300">
+                    Bank Transfer
+                </button>
+            </div>
+            
+            <!-- Bank Details Modal -->
+            <div id="bankModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                <div class="bg-white rounded-lg p-8 max-w-md mx-4">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Bank Transfer Details</h3>
+                    <div class="space-y-3 text-gray-700">
+                        <div>
+                            <strong>Bank Name:</strong> Nepal Bank Limited
+                        </div>
+                        <div>
+                            <strong>Account Name:</strong> Buddhabhoomi Human Service Ashram
+                        </div>
+                        <div>
+                            <strong>Account Number:</strong> 01234567890
+                        </div>
+                        <div>
+                            <strong>Branch:</strong> Surkhet Branch
+                        </div>
+                        <div class="text-sm text-gray-600 mt-4">
+                            Please send us the transaction receipt at info@buddhabhoomi.org.np
+                        </div>
+                    </div>
+                    <button onclick="closeBankModal()" class="mt-6 w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Mission & Vision</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Guided by compassion and driven by purpose, we work towards a Nepal where no one is left behind.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Mission -->
+                <div class="bg-green-50 rounded-lg p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-green-600 rounded-full p-3 mr-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900">Our Mission</h3>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">
+                        To provide dignity, shelter, care, and compassion to homeless and elderly individuals, 
+                        ensuring a humane and respectful life for the most vulnerable members of society.
+                    </p>
+                </div>
+                
+                <!-- Vision -->
+                <div class="bg-yellow-50 rounded-lg p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-yellow-600 rounded-full p-3 mr-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900">Our Vision</h3>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">
+                        To build a compassionate Nepal where no elderly or homeless person is left abandoned, 
+                        neglected, or without care.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="py-16 bg-gradient-to-r from-green-600 to-green-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-4">Join Us in Making a Difference</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">
+                Every contribution, whether through donation or volunteering, helps us provide better care 
+                and support to those who need it most.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#donate" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-semibold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">
+                    Make a Donation
+                </a>
+                <a href="#volunteer" class="bg-transparent border-2 border-white hover:bg-white hover:text-green-800 font-semibold py-3 px-8 rounded-lg transition duration-300">
+                    Volunteer With Us
+                </a>
+                <a href="#contact" class="bg-transparent border-2 border-white hover:bg-white hover:text-green-800 font-semibold py-3 px-8 rounded-lg transition duration-300">
+                    Get in Touch
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Organization Info -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-green-600 to-green-800 rounded-full flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="text-xl font-bold">Buddhabhoomi Human Service Ashram</div>
+                            <div class="text-sm text-gray-300 nepali-text">बुद्धभुमी मानव सेवा आश्रम</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4 max-w-md">
+                        Dedicated to providing compassionate care and support to homeless individuals and elderly citizens across Nepal. 
+                        Together, we can make a difference in the lives of those who need it most.
+                    </p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-200">About Us</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-200">Our Programs</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-200">Our Cities</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-200">Blog</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-200">Events</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-200">Volunteer</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-200">Donate</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact Info</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-start space-x-3">
+                            <svg class="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            <div>
+                                <p class="text-gray-300">Birendranagar, Surkhet, Nepal</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <svg class="h-5 w-5 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                            </svg>
+                            <a href="tel:+977-83-520123" class="text-gray-300 hover:text-white transition-colors duration-200">+977-83-520123</a>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <svg class="h-5 w-5 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            <a href="mailto:info@buddhabhoomi.org.np" class="text-gray-300 hover:text-white transition-colors duration-200">info@buddhabhoomi.org.np</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom Section -->
+            <div class="border-t border-gray-800 mt-8 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="text-gray-400 text-sm mb-4 md:mb-0">
+                        <p>&copy; 2024 Buddhabhoomi Human Service Ashram. All rights reserved.</p>
+                        <p class="mt-1">Registration No: 12345/2080</p>
+                    </div>
+                    <div class="flex space-x-6 text-sm">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">Terms of Service</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple demo notification
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(() => {
+                const notification = document.createElement('div');
+                notification.className = 'fixed top-4 right-4 bg-blue-600 text-white px-6 py-3 rounded-lg shadow-lg z-50';
+                notification.innerHTML = `
+                    <div class="flex items-center space-x-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <span>This is a preview. Deploy to get full functionality!</span>
+                    </div>
+                `;
+                document.body.appendChild(notification);
+                
+                setTimeout(() => {
+                    notification.remove();
+                }, 5000);
+            }, 2000);
+        });
+
+        // Donation Functions
+        function selectAmount(amount) {
+            document.getElementById('customAmount').value = amount;
+            // Remove active class from all buttons
+            document.querySelectorAll('.amount-btn').forEach(btn => {
+                btn.classList.remove('bg-white/40');
+                btn.classList.add('bg-white/20');
+            });
+            // Add active class to clicked button
+            event.target.classList.remove('bg-white/20');
+            event.target.classList.add('bg-white/40');
+        }
+
+        function donateWithEsewa() {
+            const amount = document.getElementById('customAmount').value;
+            if (!amount || amount < 10) {
+                alert('Please enter a valid donation amount (minimum NPR 10)');
+                return;
+            }
+            alert(`Redirecting to eSewa for NPR ${amount} donation.\n\nIn the live website, this will redirect to the actual eSewa payment gateway.`);
+        }
+
+        function donateWithKhalti() {
+            const amount = document.getElementById('customAmount').value;
+            if (!amount || amount < 10) {
+                alert('Please enter a valid donation amount (minimum NPR 10)');
+                return;
+            }
+            alert(`Processing Khalti payment for NPR ${amount}.\n\nIn the live website, this will open the Khalti payment widget.`);
+        }
+
+        function showBankDetails() {
+            document.getElementById('bankModal').classList.remove('hidden');
+        }
+
+        function closeBankModal() {
+            document.getElementById('bankModal').classList.add('hidden');
+        }
+
+        // Volunteer Functions
+        function toggleVolunteerForm() {
+            const form = document.getElementById('volunteerForm');
+            if (form.style.display === 'none' || form.style.display === '') {
+                form.style.display = 'block';
+                form.scrollIntoView({ behavior: 'smooth' });
+                event.target.textContent = 'Hide Registration Form';
+            } else {
+                form.style.display = 'none';
+                event.target.textContent = 'Register as Volunteer';
+            }
+        }
+
+        function submitVolunteerForm() {
+            event.preventDefault();
+            
+            // Basic form validation
+            const requiredFields = document.querySelectorAll('#volunteerForm input[required], #volunteerForm textarea[required]');
+            let isValid = true;
+            
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    field.style.borderColor = '#ef4444';
+                    isValid = false;
+                } else {
+                    field.style.borderColor = '#d1d5db';
+                }
+            });
+            
+            // Check if at least one interest is selected
+            const interests = document.querySelectorAll('#volunteerForm input[type="checkbox"]:not([required])');
+            const hasInterest = Array.from(interests).some(cb => cb.checked);
+            
+            if (!hasInterest) {
+                alert('Please select at least one area of interest.');
+                return;
+            }
+            
+            if (!isValid) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Check terms agreement
+            const termsCheckbox = document.querySelector('#volunteerForm input[type="checkbox"][required]');
+            if (!termsCheckbox.checked) {
+                alert('Please agree to the volunteer terms and conditions.');
+                return;
+            }
+            
+            alert('Thank you for your volunteer application!\n\nIn the live website, this form will be submitted to our database and you will receive a confirmation email. Our team will review your application and contact you within 2-3 business days.');
+            
+            // Reset form
+            document.querySelector('#volunteerForm form').reset();
+            toggleVolunteerForm();
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Initially hide volunteer form
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('volunteerForm').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
