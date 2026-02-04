@@ -96,10 +96,10 @@
                     ensuring a humane and respectful life for the most vulnerable members of society.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-semibold py-4 px-8 rounded-lg transition duration-300 transform hover:scale-105">
+                    <a href="#donate" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-semibold py-4 px-8 rounded-lg transition duration-300 transform hover:scale-105">
                         Donate Now
                     </a>
-                    <a href="#" class="bg-transparent border-2 border-white hover:bg-white hover:text-green-800 font-semibold py-4 px-8 rounded-lg transition duration-300">
+                    <a href="#volunteer" class="bg-transparent border-2 border-white hover:bg-white hover:text-green-800 font-semibold py-4 px-8 rounded-lg transition duration-300">
                         Become a Volunteer
                     </a>
                 </div>
@@ -558,9 +558,118 @@
                     <p class="text-gray-600">Help identify and connect with vulnerable individuals in the community.</p>
                 </div>
             </div>
-            <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">
+            
+            <!-- Volunteer Registration Form -->
+            <div id="volunteerForm" class="max-w-4xl mx-auto bg-gray-50 rounded-lg p-8 mb-8">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">Volunteer Registration Form</h3>
+                <form class="space-y-6">
+                    <!-- Personal Information -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
+                            <input type="text" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Your full name">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Email *</label>
+                            <input type="email" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="your@email.com">
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
+                            <input type="tel" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="+977-XXX-XXXXXXX">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Age</label>
+                            <input type="number" min="16" max="80" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="25">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Address</label>
+                        <textarea rows="2" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Your complete address"></textarea>
+                    </div>
+                    
+                    <!-- Skills and Interests -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Areas of Interest *</label>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                            <label class="flex items-center">
+                                <input type="checkbox" class="mr-2" value="elderly-care">
+                                <span class="text-sm">Elderly Care</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="mr-2" value="homeless-support">
+                                <span class="text-sm">Homeless Support</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="mr-2" value="healthcare">
+                                <span class="text-sm">Healthcare</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="mr-2" value="administration">
+                                <span class="text-sm">Administration</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="mr-2" value="fundraising">
+                                <span class="text-sm">Fundraising</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="mr-2" value="outreach">
+                                <span class="text-sm">Community Outreach</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Availability</label>
+                            <select class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option value="">Select availability</option>
+                                <option value="weekdays">Weekdays</option>
+                                <option value="weekends">Weekends</option>
+                                <option value="both">Both weekdays and weekends</option>
+                                <option value="flexible">Flexible</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Preferred Location</label>
+                            <select class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option value="">Select location</option>
+                                <option value="surkhet">Surkhet</option>
+                                <option value="jajarkot">Jajarkot</option>
+                                <option value="both">Both locations</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Skills and Experience</label>
+                        <textarea rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Tell us about your relevant skills, experience, or qualifications..."></textarea>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Why do you want to volunteer with us?</label>
+                        <textarea rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Share your motivation for volunteering..."></textarea>
+                    </div>
+                    
+                    <div class="flex items-center">
+                        <input type="checkbox" required class="mr-2">
+                        <span class="text-sm text-gray-700">I agree to the volunteer terms and conditions and commit to serving with dedication and compassion.</span>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button type="submit" onclick="submitVolunteerForm()" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">
+                            Submit Application
+                        </button>
+                    </div>
+                </form>
+            </div>
+            
+            <button onclick="toggleVolunteerForm()" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">
                 Register as Volunteer
-            </a>
+            </button>
         </div>
     </section>
 
@@ -589,16 +698,97 @@
                     <p class="text-sm">Supports comprehensive care for one person</p>
                 </div>
             </div>
+            
+            <!-- Donation Form -->
+            <div class="max-w-2xl mx-auto bg-white/10 backdrop-blur-sm rounded-lg p-8 mb-8">
+                <h3 class="text-2xl font-bold mb-6">Make a Donation</h3>
+                <form id="donationForm" class="space-y-4">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                        <button type="button" onclick="selectAmount(500)" class="amount-btn bg-white/20 hover:bg-white/30 text-white font-semibold py-3 px-4 rounded-lg transition duration-300">
+                            NPR 500
+                        </button>
+                        <button type="button" onclick="selectAmount(2000)" class="amount-btn bg-white/20 hover:bg-white/30 text-white font-semibold py-3 px-4 rounded-lg transition duration-300">
+                            NPR 2,000
+                        </button>
+                        <button type="button" onclick="selectAmount(5000)" class="amount-btn bg-white/20 hover:bg-white/30 text-white font-semibold py-3 px-4 rounded-lg transition duration-300">
+                            NPR 5,000
+                        </button>
+                        <button type="button" onclick="selectAmount(10000)" class="amount-btn bg-white/20 hover:bg-white/30 text-white font-semibold py-3 px-4 rounded-lg transition duration-300">
+                            NPR 10,000
+                        </button>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Custom Amount (NPR)</label>
+                            <input type="number" id="customAmount" placeholder="Enter amount" class="w-full px-3 py-2 bg-white/20 border border-white/30 rounded-md text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Donation Purpose</label>
+                            <select class="w-full px-3 py-2 bg-white/20 border border-white/30 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-white/50">
+                                <option value="general">General Support</option>
+                                <option value="homeless">Homeless Care</option>
+                                <option value="elderly">Elderly Care</option>
+                                <option value="emergency">Emergency Fund</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Full Name</label>
+                            <input type="text" required class="w-full px-3 py-2 bg-white/20 border border-white/30 rounded-md text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50" placeholder="Your full name">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Email</label>
+                            <input type="email" required class="w-full px-3 py-2 bg-white/20 border border-white/30 rounded-md text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50" placeholder="your@email.com">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Phone (Optional)</label>
+                        <input type="tel" class="w-full px-3 py-2 bg-white/20 border border-white/30 rounded-md text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50" placeholder="+977-XXX-XXXXXXX">
+                    </div>
+                </form>
+            </div>
+            
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-semibold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">
+                <button onclick="donateWithEsewa()" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-semibold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">
                     Donate with eSewa
-                </a>
-                <a href="#" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">
+                </button>
+                <button onclick="donateWithKhalti()" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">
                     Donate with Khalti
-                </a>
-                <a href="#" class="bg-transparent border-2 border-white hover:bg-white hover:text-green-800 font-semibold py-3 px-8 rounded-lg transition duration-300">
+                </button>
+                <button onclick="showBankDetails()" class="bg-transparent border-2 border-white hover:bg-white hover:text-green-800 font-semibold py-3 px-8 rounded-lg transition duration-300">
                     Bank Transfer
-                </a>
+                </button>
+            </div>
+            
+            <!-- Bank Details Modal -->
+            <div id="bankModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                <div class="bg-white rounded-lg p-8 max-w-md mx-4">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Bank Transfer Details</h3>
+                    <div class="space-y-3 text-gray-700">
+                        <div>
+                            <strong>Bank Name:</strong> Nepal Bank Limited
+                        </div>
+                        <div>
+                            <strong>Account Name:</strong> Buddhabhoomi Human Service Ashram
+                        </div>
+                        <div>
+                            <strong>Account Number:</strong> 01234567890
+                        </div>
+                        <div>
+                            <strong>Branch:</strong> Surkhet Branch
+                        </div>
+                        <div class="text-sm text-gray-600 mt-4">
+                            Please send us the transaction receipt at info@buddhabhoomi.org.np
+                        </div>
+                    </div>
+                    <button onclick="closeBankModal()" class="mt-6 w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300">
+                        Close
+                    </button>
+                </div>
             </div>
         </div>
     </section>
@@ -656,13 +846,13 @@
                 and support to those who need it most.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-semibold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">
+                <a href="#donate" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-semibold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">
                     Make a Donation
                 </a>
-                <a href="#" class="bg-transparent border-2 border-white hover:bg-white hover:text-green-800 font-semibold py-3 px-8 rounded-lg transition duration-300">
+                <a href="#volunteer" class="bg-transparent border-2 border-white hover:bg-white hover:text-green-800 font-semibold py-3 px-8 rounded-lg transition duration-300">
                     Volunteer With Us
                 </a>
-                <a href="#" class="bg-transparent border-2 border-white hover:bg-white hover:text-green-800 font-semibold py-3 px-8 rounded-lg transition duration-300">
+                <a href="#contact" class="bg-transparent border-2 border-white hover:bg-white hover:text-green-800 font-semibold py-3 px-8 rounded-lg transition duration-300">
                     Get in Touch
                 </a>
             </div>
@@ -763,7 +953,7 @@
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
-                        <span>This is a preview. Install PHP to see the full website!</span>
+                        <span>This is a preview. Deploy to get full functionality!</span>
                     </div>
                 `;
                 document.body.appendChild(notification);
@@ -772,6 +962,121 @@
                     notification.remove();
                 }, 5000);
             }, 2000);
+        });
+
+        // Donation Functions
+        function selectAmount(amount) {
+            document.getElementById('customAmount').value = amount;
+            // Remove active class from all buttons
+            document.querySelectorAll('.amount-btn').forEach(btn => {
+                btn.classList.remove('bg-white/40');
+                btn.classList.add('bg-white/20');
+            });
+            // Add active class to clicked button
+            event.target.classList.remove('bg-white/20');
+            event.target.classList.add('bg-white/40');
+        }
+
+        function donateWithEsewa() {
+            const amount = document.getElementById('customAmount').value;
+            if (!amount || amount < 10) {
+                alert('Please enter a valid donation amount (minimum NPR 10)');
+                return;
+            }
+            alert(`Redirecting to eSewa for NPR ${amount} donation.\n\nIn the live website, this will redirect to the actual eSewa payment gateway.`);
+        }
+
+        function donateWithKhalti() {
+            const amount = document.getElementById('customAmount').value;
+            if (!amount || amount < 10) {
+                alert('Please enter a valid donation amount (minimum NPR 10)');
+                return;
+            }
+            alert(`Processing Khalti payment for NPR ${amount}.\n\nIn the live website, this will open the Khalti payment widget.`);
+        }
+
+        function showBankDetails() {
+            document.getElementById('bankModal').classList.remove('hidden');
+        }
+
+        function closeBankModal() {
+            document.getElementById('bankModal').classList.add('hidden');
+        }
+
+        // Volunteer Functions
+        function toggleVolunteerForm() {
+            const form = document.getElementById('volunteerForm');
+            if (form.style.display === 'none' || form.style.display === '') {
+                form.style.display = 'block';
+                form.scrollIntoView({ behavior: 'smooth' });
+                event.target.textContent = 'Hide Registration Form';
+            } else {
+                form.style.display = 'none';
+                event.target.textContent = 'Register as Volunteer';
+            }
+        }
+
+        function submitVolunteerForm() {
+            event.preventDefault();
+            
+            // Basic form validation
+            const requiredFields = document.querySelectorAll('#volunteerForm input[required], #volunteerForm textarea[required]');
+            let isValid = true;
+            
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    field.style.borderColor = '#ef4444';
+                    isValid = false;
+                } else {
+                    field.style.borderColor = '#d1d5db';
+                }
+            });
+            
+            // Check if at least one interest is selected
+            const interests = document.querySelectorAll('#volunteerForm input[type="checkbox"]:not([required])');
+            const hasInterest = Array.from(interests).some(cb => cb.checked);
+            
+            if (!hasInterest) {
+                alert('Please select at least one area of interest.');
+                return;
+            }
+            
+            if (!isValid) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Check terms agreement
+            const termsCheckbox = document.querySelector('#volunteerForm input[type="checkbox"][required]');
+            if (!termsCheckbox.checked) {
+                alert('Please agree to the volunteer terms and conditions.');
+                return;
+            }
+            
+            alert('Thank you for your volunteer application!\n\nIn the live website, this form will be submitted to our database and you will receive a confirmation email. Our team will review your application and contact you within 2-3 business days.');
+            
+            // Reset form
+            document.querySelector('#volunteerForm form').reset();
+            toggleVolunteerForm();
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Initially hide volunteer form
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('volunteerForm').style.display = 'none';
         });
     </script>
 </body>
